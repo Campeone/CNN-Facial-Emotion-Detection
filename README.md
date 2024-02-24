@@ -1,7 +1,11 @@
-Facial Emotion Detection
+# Facial Emotion Detection with Flask Web App
 ==============================
 
-Facial Emotion Detection is a deep learning project aimed at developing a Convolutional Neural Network (CNN) for facial emotion recognition. The Computer Vision project was trained to accurately detect and classify facial expressions such as "Anger", "Disgust", "Fear", "Happiness", "Neutrality", "Sadness", and "Surprise", leveraging datasets with labeled facial images.The repository contains the Train and Test datasets,implementation code, the trained model, and the Flask deployment code.
+## Overview
+Facial Emotion Detection is a deep learning project aimed at developing a Convolutional Neural Network (CNN) for facial emotion recognition. The Computer Vision project was trained to accurately detect and classify facial expressions such as "Anger", "Happiness", and "Sadness", leveraging datasets with labeled facial images.The repository contains the Train and Test datasets, implementation code, the trained model, and the Flask deployment code.
+
+Users can upload images containing faces, and the application will detect and classify the emotions present in each face.
+
 
 Project Organization
 ------------
@@ -51,6 +55,50 @@ Project Organization
     │
     └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
 
+
+
+## Features
+- Upload Image: Users can upload images containing faces.
+- Emotion Detection: The application detects facial expressions and classifies them into different emotions such as happy, sad, angry, etc.
+- Display Results: Detected emotions are displayed alongside the uploaded image for user visualization.
+- User-Friendly Interface: The Flask web app provides a simple and intuitive interface for users to interact with.
+
+## Technologies Used
+- Python
+- TensorFlow, Keras: Deep learning frameworks for training and deploying the emotion detection model.
+- OpenCV: Image processing library for face detection and manipulation. 
+- Pandas: For data preprocessing.
+- Matplotlib: Image visualization and plotting.
+- Flask: Web framework for developing the user interface.
+- HTML/CSS: Frontend design and layout.
+
+## Files in Repository
+- `FaceNet.py`: Flask application script containing the backend logic for image processing and emotion detection.
+- `templates/`: Directory containing HTML templates for the web application.
+- `static/`: Directory containing static files such as CSS stylesheets and JavaScript scripts.
+- `model/’: Trained CNN deep learning model for facial emotion detection.
+- `notebooks/’: Directory containing jupyter notebook file for training the deep learning model for facial emotion detection.
+- `README.md`: Readme file providing an overview of the project and instructions for replication.
+
+## Usage
+1. Clone the repository to your local machine.
+2. Install the required dependencies using `pip install -r requirements.txt`.
+3. Run the Flask application using `python FaceNet.py`.
+4. Access the web application through your browser at `http://localhost:5000`.
+5. Upload an image containing faces and observe the detected emotions.
+
+## Example
+![Facial Emotion Detection Web App](example.png)
+
+## Future Enhancements
+- Improve model accuracy and robustness through further training and fine-tuning.
+- Implement real-time video emotion detection for live webcam feeds.
+- Enhance the user interface with additional features such as image cropping and resizing.
+
+Feel free to reach out with any questions or feedback!
+
+**Author:** Ojo Timilehin 
+**Contact:** Ojotimilehin01@gmail.com
 
 --------
 
