@@ -1,0 +1,24 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <title>Facial Emotion Recognition</title> 
+        <!-- External CSS file for styling-->
+        <link rel="stylesheet" type="text/css" href="static/FaceNet.css">
+    </head>
+    <body>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <!-- Heading -->
+            <h1>Facial Emotion Recognition Web App</h1> 
+
+            <!-- Input for Image file -->
+            <label for="Face_image">Facial Image</label>
+            <input type="file" name="Face_image" accept=".jpg, .jpeg, .png" required> 
+
+            <!-- Button to trigger Facial detection -->
+            <button type="submit">Upload Image</button>
+        </form> 
+        <div>
+            
+        </div>
+    </body>
+</html>
