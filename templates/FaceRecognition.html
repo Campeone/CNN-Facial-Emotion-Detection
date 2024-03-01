@@ -5,14 +5,18 @@
         <meta name="viewport" content="width=device-width">
         <title>Facial Emotion Recognition Result</title> 
         <!-- External CSS file for styling--> 
-        <link rel="stylesheet" type="text/css" href="static/FaceNet.css">
+        <link rel="stylesheet" type="text/css" href="static/FaceRec.css">
     </head> 
     <body> 
-        <h1> Facial Emotion Recognition Result </h1> 
-        <div> 
-            <img src="{{ path }}" alt="Uploaded Facial Image" class="img-fluid" style="max-width: 480px;">
-        </div>
-        <div>
-            <p> Your face looks {{emotion}} </p>
+        <div class="container">
+            <h1> Facial Emotion Recognition Result </h1> 
+            <div class="img-container">
+                <img src="{{ path }}" alt="Uploaded Facial Image" class="img-fluid">
+            </div>
+            
+            <div>
+            <p class="emotion-text"> Your face looks {{ emotion }} </p>
+            </div>
+            
         </div>
     </body>

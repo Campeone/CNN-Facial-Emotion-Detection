@@ -1,7 +1,7 @@
 # import necessary libraries 
 import os
 import tensorflow as tf 
-import PIL 
+
 import logging
 import numpy as np
 from tensorflow.keras.preprocessing.image import img_to_array, load_img 
@@ -53,23 +53,22 @@ def upload():
         pred_emotion = Emotion_class[flat_probabilities]
         
         # log inormation
-        app.logger.info(f'The prediction probabilities {pred_probabilities} {image_path} gives a/an {pred_emotion} emotion')
+        app.logger.info(f'The prediction probabilities {pred_probabilities} gives a/an {pred_emotion} emotion')
         # return variables needed for final output 
-        image_url = url_for('static', filename = image_path)
-        return redirect(url_for('result', up_image_path = file_name, up_emotion = pred_emotion, img_url = image_url))
+        image_url = url_for('uploaded_file', filename = file_name)
+        return redirect(url_for('result', up_emotion = pred_emotion, img_url = image_url))
 
-#@app.route('/uploads/<path:file_name') 
-#def serve_upload(file_name): 
- #   return send_from_directory(app.config['UPLOAD_FOLDER'], file_name) 
+@app.route('/uploads/<filename>')
+def uploaded_file(filename):
+    return send_from_directory(app.config['UPLOAD_FOLDER'], filename) 
+
 
 @app.route('/result') 
 def result(): 
-    file_name = request.args.get('up_image_path')
+   
     nemotion = request.args.get('up_emotion') 
     im_url = request.args.get('img_url') 
 
-    image_path = os.path.join(app.config['UPLOAD_FOLDER'], file_name)
-    app.logger.info(f"The file path '{file_name}'")
-    return render_template('FaceRecognition.html', path = im_url, emotion = nemotion, im_path = image_path, filepath = file_name) 
+    return render_template('FaceRecognition.html', path = im_url, emotion = nemotion) 
 if __name__ == '__main__': 
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=8080)
